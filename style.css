@@ -1,0 +1,113 @@
+/* Google Font: Open Sans 300 , 400 ,600 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+
+:root{
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(4.5px,0.9vw,10px);
+  /* Color-pallete */
+  --black-blue: rgb(26, 26, 46);
+  --dark-blue: rgb(22, 33, 62);
+  --red: rgb(233, 69, 96);
+  --navy-blue: rgb(15, 52, 96);
+  --light-blue: rgb(176, 206, 243);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body{
+  min-height: 100vh;
+  background-color: var(--light-blue);
+}
+
+button{
+  all: unset;
+  text-align: center;
+}
+
+.calculator{
+  /* Position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  /* flex */
+  display: flex;
+  flex-direction: column;
+
+  background-color: #010509;
+  border-radius: 1.5rem;
+}
+
+.display{
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
+  margin-top: 5rem;
+  height: 40rem;
+  width: 50rem;
+  font-size: 4rem;
+  box-sizing: border-box;
+  padding: 2.5rem;
+}
+
+.keypad{
+  /* grid */
+  display: grid;
+  grid-template: repeat(4,1fr)/repeat(4,1fr);
+  gap: 1rem;
+
+  /* paddings */
+  padding: 2.5rem;
+  padding-top: 1rem;
+}
+
+.key{
+  /* Font */
+  font-family: 'Open Sans',sans-serif;
+  font-size: 4rem;
+
+  /* colors */
+  color: var(--light-blue);
+  background-color: var(--black-blue);
+
+  /* border */
+  border-radius: 0.5rem;
+  border: .2rem solid #5797e5;
+}
+
+.key:hover{
+  background-color: #5797e5;
+  color: white;
+  border: .2rem solid white;
+}
+
+.key[data-key="="]{
+  background-color: var(--red);
+  border: none;
+  color: white;
+}
+
+.key[data-key="="]:hover{
+  background-color: #fefafb;
+  color: var(--red);
+  border: 0.2rem solid var(--red);
+}
+
+/* Footer */
+footer{
+  /* position */
+  position: fixed;
+  bottom: 0; /*change this later*/
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* font */
+  color:var(--black-blue);
+  font-size: 3rem;
+  font-weight: 400;
+}
