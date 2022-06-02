@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
+  <!-- title icon -->
+  <link rel="icon" href="./images/keys.png">
+
   <title>Calculator</title>
 </head>
 <body>
@@ -17,34 +20,36 @@
 
     <!-- Calculator display -->
     <div class="display">
-      <p style="padding: 2rem;">
-        3 × 5 = 15 <br>
-        15 + 12 = 27 
-      </p>
-        <hr style="border-top: 1rem double var(--light-blue);">
-      <p style="padding: 2rem 0;">
-        27
-      </p>
+      <div class="input-display"></div>
+      <hr style="border-top: 0.2rem solid var(--light-blue);">
+      <div class="history">
+        <!-- <p>history1</p>
+        <p>history2</p>
+        <p>history3</p>
+        <p>history4</p>
+        <p>history5</p>
+        <p>history6</p> -->
+      </div>
     </div>
 
     <!-- Calculator keypad -->
     <div class="keypad">
-      <button class="key" data-key="7">7</button>
-      <button class="key" data-key="8">8</button>
-      <button class="key" data-key="9">9</button>
-      <button class="key" data-key="c">C</button>
-      <button class="key" data-key="4">4</button>
-      <button class="key" data-key="5">5</button>
-      <button class="key" data-key="6">6</button>
-      <button class="key" data-key="+">+</button>
-      <button class="key" data-key="1">1</button>
-      <button class="key" data-key="2">2</button>
-      <button class="key" data-key="3">3</button>
-      <button class="key" data-key="-">−</button>
-      <button class="key" data-key="×">×</button>
-      <button class="key" data-key="0">0</button>
-      <button class="key" data-key="÷">÷</button>
-      <button class="key" data-key="=">=</button>
+      <button class="key" data-key="7" data-key-type="number">7</button>
+      <button class="key" data-key="8" data-key-type="number">8</button>
+      <button class="key" data-key="9" data-key-type="number">9</button>
+      <button class="key" data-key="c" data-key-type="function">C</button>
+      <button class="key" data-key="4" data-key-type="number">4</button>
+      <button class="key" data-key="5" data-key-type="number">5</button>
+      <button class="key" data-key="6" data-key-type="number">6</button>
+      <button class="key" data-key="+" data-key-type="operation">+</button>
+      <button class="key" data-key="1" data-key-type="number">1</button>
+      <button class="key" data-key="2" data-key-type="number">2</button>
+      <button class="key" data-key="3" data-key-type="number">3</button>
+      <button class="key" data-key="-" data-key-type="operation">−</button>
+      <button class="key" data-key="*" data-key-type="operation">×</button>
+      <button class="key" data-key="0" data-key-type="number">0</button>
+      <button class="key" data-key="/" data-key-type="operation">÷</button>
+      <button class="key" data-key="=" data-key-type="function">=</button>
     </div>
   </div>
 

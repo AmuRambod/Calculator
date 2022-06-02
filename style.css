@@ -4,7 +4,7 @@
 
 :root{
   font-family: 'Open Sans', sans-serif;
-  font-size: clamp(4.5px,0.9vw,10px);
+  font-size: clamp(4.5px,0.9vw,1vh);
   /* Color-pallete */
   --black-blue: rgb(26, 26, 46);
   --dark-blue: rgb(22, 33, 62);
@@ -45,14 +45,38 @@ button{
 }
 
 .display{
+  /* colors */
   background-color: var(--dark-blue);
   color: var(--light-blue);
+
+  /* sizes */
   margin-top: 5rem;
   height: 40rem;
   width: 50rem;
-  font-size: 4rem;
   box-sizing: border-box;
-  padding: 2.5rem;
+  padding: 1rem;
+  
+  /* flex */
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.input-display{
+  height: 5rem;
+  font-size: 4rem;
+  margin: 0.5rem;
+}
+
+.history{
+  font-size: 3rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.history > p{
+  margin-bottom: 0.8rem;
 }
 
 .keypad{
