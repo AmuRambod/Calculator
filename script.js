@@ -100,11 +100,22 @@ const getResult = () => {
   [num,num1,num2,operation,isAfterResult] = ["",0,0,null,true];
 }
 
+const backspace = () => {
+  if(inputDisplay.textContent.endsWith(" ")){
+    inputDisplay.textContent = inputDisplay.textContent.slice(0,-3);
+    [operation,num,num1] = [null,inputDisplay.textContent,0];
+  }else{
+    inputDisplay.textContent = inputDisplay.textContent.slice(0,-1);
+    num = num.slice(0,-1);
+  }
+}
+
 const getInput = (input) => {
   if (input >= 0 && input <= 9) getDigit(input);
   if (["+","-","*","/"].includes(input)) getOperator(input);
   if (input === "Escape") clear();
   if (input === "=" || input === "Enter") getResult();
+  if (input === "Backspace") backspace();
 }
 
 keys.forEach(key => key.addEventListener("click" , () => getInput(key.dataset.key)));
