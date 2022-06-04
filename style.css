@@ -1,7 +1,6 @@
 /* Google Font: Open Sans 300 , 400 ,600 */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
-
 :root{
   font-family: 'Open Sans', sans-serif;
   font-size: clamp(4.5px,0.9vw,1vh);
@@ -82,7 +81,14 @@ button{
 .keypad{
   /* grid */
   display: grid;
-  grid-template: repeat(4,1fr)/repeat(4,1fr);
+  /* grid-template: repeat(4,1fr)/repeat(4,1fr); */
+  grid-template-areas: 
+  'clear clear backspace backspace'
+  'no7 no8 no9 multiply'
+  'no4 no5 no6 divide'
+  'no1 no2 no3 subtract'
+  'no0 add result result'
+  ;
   gap: 1rem;
 
   /* paddings */
