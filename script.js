@@ -113,7 +113,7 @@ const backspace = () => {
 const getInput = (input) => {
   if (input >= 0 && input <= 9) getDigit(input);
   if (["+","-","*","/"].includes(input)) getOperator(input);
-  if (input === "Escape") clear();
+  if (input === "Escape" || input === "Clear") clear();
   if (input === "=" || input === "Enter") getResult();
   if (input === "Backspace") backspace();
 }
