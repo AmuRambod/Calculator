@@ -69,8 +69,13 @@ const getDigit = (digit) => {
 }
 
 const getOperator = (operator) => {
-  if (operation != null) return;
+  if (operation != null || num === "-") return;
   if (isAfterResult) num = `${inputDisplay.textContent}`;
+  if (num === "" && operator === "-"){
+    inputDisplay.textContent += operator;
+    num += operator;
+    return;
+  }
   operation = convertOperatorStringToFunction(operator);
   const operationSymbol = () => {
     switch(operation){
