@@ -56,6 +56,11 @@ const convertOperatorStringToFunction = (operator) => {
   }
 }
 
+const convertNumber = (numString) => {
+  if (numString.includes(".")) return parseFloat(numString);
+  return parseInt(numString);
+}
+
 const getDigit = (digit) => {
   if(isAfterResult) inputDisplay.textContent = "";
   inputDisplay.textContent += digit;
@@ -80,7 +85,7 @@ const getOperator = (operator) => {
     }
   }
   inputDisplay.textContent += ` ${operationSymbol()} `;
-  num1 = parseInt(num);
+  num1 = convertNumber(num);
   num = "";
   isAfterResult = false;
 }
@@ -93,7 +98,7 @@ const clear = () => {
 const getResult = () => {
   if(operation === null || num === "") return;
   let calculation = inputDisplay.textContent;
-  num2 = parseInt(num);
+  num2 = convertNumber(num);
   inputDisplay.textContent = operate(operation,num1,num2);
   calculation += `   =   ${inputDisplay.textContent}`;
   updateHistory(calculation);
@@ -110,14 +115,23 @@ const backspace = () => {
   }
 }
 
+const getDecimal = () =>{
+  if(isAfterResult)return;
+  if(num === "")return;
+  if(num.includes(".")) return;
+  num += ".";
+  inputDisplay.textContent += ".";
+}
+
 const getInput = (input) => {
   if (input >= 0 && input <= 9) getDigit(input);
   if (["+","-","*","/"].includes(input)) getOperator(input);
   if (input === "Escape" || input === "Clear") clear();
   if (input === "=" || input === "Enter") getResult();
   if (input === "Backspace") backspace();
+  if (input === ".") getDecimal();
 }
-
-keys.forEach(key => key.addEventListener("click" , () => getInput(key.dataset.key)));
-window.addEventListener("keydown",(e) => getInput(e.key));
 //#endregion
+
+window.addEventListener("keydown",(e) => getInput(e.key));
+keys.forEach(key => key.addEventListener("click" , () => getInput(key.dataset.key)));

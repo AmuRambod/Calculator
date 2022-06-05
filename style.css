@@ -87,7 +87,7 @@ button{
   'no7 no8 no9 multiply'
   'no4 no5 no6 divide'
   'no1 no2 no3 subtract'
-  'no0 add result result';
+  'no0 add point result';
   gap: 1rem;
 
   /* paddings */
